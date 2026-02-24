@@ -33,6 +33,10 @@ class NAU7802:
         self.channel = channel
 
     @property
+    def cycle_ready(self) -> bool:
+        return registers.REG_PU_CTRL.read(self.bus, self.addr).cr
+
+    @property
     def adco(self) -> int:
         return registers.REG_ADCO.read(self.bus, self.addr).value
 
