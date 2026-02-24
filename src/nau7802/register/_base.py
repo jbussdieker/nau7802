@@ -28,15 +28,14 @@ class Register(ABC):
         if cls.WIDTH == 1:
             raw = bus.read_byte_data(addr, cls.ADDRESS)
             return cls.from_bytes(bytes([raw]))
-
-        data = bus.read_i2c_block_data(addr, cls.ADDRESS, cls.WIDTH)
-        return cls.from_bytes(bytes(data))
+        else:
+            data = bus.read_i2c_block_data(addr, cls.ADDRESS, cls.WIDTH)
+            return cls.from_bytes(bytes(data))
 
     def to_byte(self) -> int:
-        data = self.to_bytes()
-        if len(data) != 1:
+        if self.WIDTH != 1:
             raise TypeError(f"{type(self).__name__} is not 8-bit")
-        return data[0]
+        return self.to_bytes()[0]
 
     def write(self, bus: BusProtocol, addr: int) -> None:
         data = self.to_bytes()
