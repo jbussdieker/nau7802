@@ -4,8 +4,6 @@ dynamic = [
     "version",
 ]
 dependencies = [
-    "click",
-    "smbus2",
 ]
 description = "NAU7802 Driver"
 readme = "README.md"
@@ -17,7 +15,8 @@ maintainers = [
     { name = "Joshua B. Bussdieker", email = "jbussdieker@gmail.com" },
 ]
 classifiers = [
-    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Instrument Drivers",
+    "Topic :: System :: Hardware :: Hardware Drivers",
     "Development Status :: 2 - Pre-Alpha",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
@@ -36,6 +35,10 @@ license = "MIT"
 nau7802 = "nau7802.cli:main"
 
 [project.optional-dependencies]
+cli = [
+    "click",
+    "smbus2",
+]
 dev = [
     "mypy",
 ]
