@@ -26,16 +26,10 @@ def main(ctx: click.Context, bus: int) -> None:
 
 @main.command()
 @pass_context
-def power_on(ctx: CLIContext) -> None:
-    ctx.device.power_on()
-
-
-@main.command()
-@pass_context
 @click.option("--gain", "-g", default=7, show_default=True)
 @click.option("--crs", "-c", default=3, show_default=True)
 def init(ctx: CLIContext, gain: int, crs: int) -> None:
-    ctx.device.power_on()
+    ctx.device.initialize()
     ctx.device.set_gain(gain)
     ctx.device.set_crs(crs)
 

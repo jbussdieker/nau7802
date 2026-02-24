@@ -1,17 +1,20 @@
-from typing import Any
-
+from ..protocol import BusProtocol
 from .. import registers
-from . import power, setting
+
+from . import power, control, adc
 
 
 class NAU7802:
-    def __init__(self, bus: Any, addr: int = 0x2A) -> None:
+    def __init__(self, bus: BusProtocol, addr: int = 0x2A) -> None:
         self.bus = bus
         self.addr: int = addr
         self.channel: int | None = None
 
-    def power_on(self) -> None:
+    def initialize(self) -> None:
+        power._reset(self.bus, self.addr)
         power._power_on(self.bus, self.addr)
+        power._set_defaults(self.bus, self.addr)
+        adc._set_defaults(self.bus, self.addr)
 
     def standby(self) -> None:
         power._standby(self.bus, self.addr)
@@ -20,15 +23,14 @@ class NAU7802:
         power._resume(self.bus, self.addr)
 
     def set_gain(self, gain: int) -> None:
-        setting._set_gain(self.bus, self.addr, gain)
+        control._set_gain(self.bus, self.addr, gain)
 
     def set_crs(self, crs: int) -> None:
-        setting._set_crs(self.bus, self.addr, crs)
+        control._set_crs(self.bus, self.addr, crs)
 
     def set_channel(self, channel: int) -> None:
-        if self.channel != channel:
-            setting._set_channel(self.bus, self.addr, channel)
-            self.channel = channel
+        control._set_channel(self.bus, self.addr, channel)
+        self.channel = channel
 
     @property
     def adco(self) -> int:
