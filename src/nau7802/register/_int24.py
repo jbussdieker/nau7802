@@ -1,7 +1,7 @@
 from typing import Type, Self
 from dataclasses import dataclass
 
-from ._base import Register, R
+from ._base import Register
 
 
 @dataclass

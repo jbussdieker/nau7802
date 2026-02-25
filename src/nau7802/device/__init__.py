@@ -8,7 +8,6 @@ class NAU7802:
     def __init__(self, bus: BusProtocol, addr: int = 0x2A) -> None:
         self.bus = bus
         self.addr: int = addr
-        self.channel: int | None = None
 
     def initialize(self) -> None:
         power._reset(self.bus, self.addr)
@@ -30,11 +29,14 @@ class NAU7802:
 
     def set_channel(self, channel: int) -> None:
         control._set_channel(self.bus, self.addr, channel)
-        self.channel = channel
+
+    @property
+    def channel(self) -> int:
+        return 2 if self.ctrl2.chs else 1
 
     @property
     def cycle_ready(self) -> bool:
-        return registers.REG_PU_CTRL.read(self.bus, self.addr).cr
+        return self.pu_ctrl.cr
 
     @property
     def adco(self) -> int:

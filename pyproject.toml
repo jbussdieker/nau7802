@@ -28,7 +28,14 @@ classifiers = [
     "Natural Language :: English",
     "Typing :: Typed",
 ]
-keywords = ["nau7802"]
+keywords = [
+    "nau7802",
+    "adc",
+    "load-cell",
+    "i2c",
+    "embedded",
+    "raspberry-pi",
+]
 license = "MIT"
 
 [project.scripts]
