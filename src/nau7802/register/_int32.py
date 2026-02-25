@@ -1,10 +1,7 @@
 from typing import Type, Self
-from abc import abstractmethod
+from dataclasses import dataclass
 
 from ._base import Register, R
-
-
-from dataclasses import dataclass
 
 
 @dataclass

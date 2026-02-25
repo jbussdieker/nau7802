@@ -1,6 +1,7 @@
-from typing import Protocol, List
+from typing import Protocol, List, runtime_checkable
 
 
+@runtime_checkable
 class BusProtocol(Protocol):
     def read_byte_data(self, addr: int, reg: int) -> int: ...
     def write_byte_data(self, addr: int, reg: int, value: int) -> None: ...

@@ -35,13 +35,9 @@ license = "MIT"
 nau7802 = "nau7802.cli:main"
 
 [project.optional-dependencies]
-cli = [
-    "click",
-    "smbus2",
-]
-dev = [
-    "mypy",
-]
+i2c = ["smbus2"]
+cli = ["click", "smbus2"]
+dev = ["mypy"]
 
 [project.urls]
 Homepage = "https://github.com/jbussdieker/nau7802"

@@ -14,7 +14,7 @@ class CLIContext:
 pass_context = click.make_pass_decorator(CLIContext)
 
 
-@click.group()
+@click.group(context_settings={"help_option_names": ["-h", "--help"]})
 @click.option("--bus", default=1, show_default=True, type=int)
 @click.pass_context
 def main(ctx: click.Context, bus: int) -> None:

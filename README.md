@@ -33,10 +33,12 @@ Each NAU7802 register is modeled explicitly:
 
 This makes debugging with a datasheet straightforward — what you see in Python matches what exists on the chip.
 
+Typed registers prevent invalid bit configurations and make register state inspectable during debugging.
+
 ## Installation
 
 ```bash
-pip install nau7802
+pip install nau7802[i2c]
 ```
 
 Or from source:
@@ -72,6 +74,9 @@ adc = NAU7802(bus)
 adc.power_on()
 adc.set_gain(7)
 adc.set_channel(1)
+
+print(adc.ctrl2)
+# REG_CTRL2(chs=False, crs=3, ...)
 
 value = adc.adco
 print(value)
