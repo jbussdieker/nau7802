@@ -13,6 +13,12 @@ class REG_CTRL1(ByteRegister):
     vldo: int = 0  # 0..7
     pga: int = 1  # 0..7
 
+    def __post_init__(self) -> None:
+        if not 0 <= self.vldo <= 7:
+            raise ValueError("vldo out of range")
+        if not 0 <= self.pga <= 7:
+            raise ValueError("pga out of range")
+
     def to_byte(self) -> int:
         value = 0
         value |= self.drdyp << 7

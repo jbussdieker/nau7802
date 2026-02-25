@@ -11,6 +11,12 @@ class REG_REV_ID(ByteRegister):
     rev_id: int = 0
     res: int = 0
 
+    def __post_init__(self) -> None:
+        if not 0 <= self.rev_id <= 15:
+            raise ValueError("rev_id out of range")
+        if not 0 <= self.res <= 15:
+            raise ValueError("res out of range")
+
     def to_byte(self) -> int:
         value = 0
         value |= (self.res & 0b1111) << 4

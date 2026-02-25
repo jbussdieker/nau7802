@@ -13,6 +13,16 @@ class REG_ADC_CTRL1(ByteRegister):
     adc_vcm: int = 0
     dly_chp: int = 0
 
+    def __post_init__(self) -> None:
+        if not 0 <= self.res <= 3:
+            raise ValueError("res out of range")
+        if not 0 <= self.reg_chps <= 3:
+            raise ValueError("reg_chps out of range")
+        if not 0 <= self.adc_vcm <= 3:
+            raise ValueError("adc_vcm out of range")
+        if not 0 <= self.dly_chp <= 3:
+            raise ValueError("dly_chp out of range")
+
     def to_byte(self) -> int:
         value = 0
         value |= (self.res & 0b11) << 6

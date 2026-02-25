@@ -14,6 +14,12 @@ class REG_CTRL2(ByteRegister):
     cals: bool = False
     calmod: int = 0
 
+    def __post_init__(self) -> None:
+        if not 0 <= self.crs <= 7:
+            raise ValueError("crs out of range")
+        if not 0 <= self.calmod <= 3:
+            raise ValueError("calmod out of range")
+
     def to_byte(self) -> int:
         value = 0
         value |= self.chs << 7

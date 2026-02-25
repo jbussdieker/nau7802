@@ -1,6 +1,10 @@
 from dataclasses import dataclass
 
-import click
+try:
+    import click
+except ImportError:
+    raise RuntimeError("Install with: pip install nau7802[cli]")
+
 import smbus2
 
 from . import NAU7802

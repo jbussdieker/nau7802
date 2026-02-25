@@ -10,6 +10,10 @@ class Int32Register(Register):
 
     value: int = 0  # signed 32-bit
 
+    def __post_init__(self) -> None:
+        if not (-(2**31) <= self.value < 2**31):
+            raise ValueError("Value out of signed 32-bit range")
+
     def to_bytes(self) -> bytes:
         v = self.value & 0xFFFFFFFF
         return bytes(
@@ -23,6 +27,7 @@ class Int32Register(Register):
 
     @classmethod
     def from_bytes(cls, data: bytes) -> Self:
+        cls._assert_data_width(data)
         val = (data[0] << 24) | (data[1] << 16) | (data[2] << 8) | data[3]
 
         # sign extend

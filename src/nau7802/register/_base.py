@@ -1,4 +1,4 @@
-from typing import TypeVar, Type
+from typing import TypeVar, ClassVar, Type
 from abc import ABC, abstractmethod
 
 from ..protocol import BusProtocol
@@ -7,7 +7,7 @@ R = TypeVar("R", bound="Register")
 
 
 class Register(ABC):
-    ADDRESS: int
+    ADDRESS: ClassVar[int]
     WIDTH: int = 1
 
     @abstractmethod
@@ -44,3 +44,10 @@ class Register(ABC):
             bus.write_byte_data(addr, self.ADDRESS, data[0])
         else:
             bus.write_i2c_block_data(addr, self.ADDRESS, list(data))
+
+    @classmethod
+    def _assert_data_width(cls: Type[R], data: bytes) -> None:
+        if len(data) != cls.WIDTH:
+            raise ValueError(
+                f"{cls.__name__} expects {cls.WIDTH} bytes, got {len(data)}"
+            )

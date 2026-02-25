@@ -2,9 +2,9 @@
 
 A **typed, register-accurate Python driver** for the **NAU7802** 24-bit ADC load-cell amplifier.
 
-This library provides a clean, Pythonic interface to the NAU7802 while preserving a **direct mapping to the hardware register model**. Every register is represented as a strongly-typed dataclass, enabling safe configuration, introspection, and debugging without hiding how the device actually works.
+This library provides a clean, Pythonic interface to the NAU7802 while preserving a **1:1 mapping to the hardware register model**. Every register is represented as a strongly-typed dataclass, enabling safe configuration, introspection, and debugging without hiding how the device actually works.
 
-Designed for Linux SBCs (Raspberry Pi, etc.) using I²C via `smbus2`.
+Designed primarily for Linux SBCs (Raspberry Pi, etc.) using I²C via `smbus2`.
 
 ## Features
 
@@ -69,7 +69,7 @@ import smbus2
 from nau7802 import NAU7802
 
 bus = smbus2.SMBus(1)
-adc = NAU7802(bus)
+adc = NAU7802(bus, addr=0x2A)
 
 adc.power_on()
 adc.set_gain(7)

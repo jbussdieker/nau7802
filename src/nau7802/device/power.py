@@ -14,8 +14,12 @@ def _power_on(bus: BusProtocol, addr: int) -> None:
     pu.pud = True
     pu.write(bus, addr)
     pu = REG_PU_CTRL.read(bus, addr)
-    if not pu.pur:
-        raise RuntimeError("Power-up failed")
+
+    for _ in range(100):
+        if REG_PU_CTRL.read(bus, addr).pur:
+            return
+
+    raise RuntimeError("Power-up failed")
 
 
 def _set_defaults(bus: BusProtocol, addr: int) -> None:

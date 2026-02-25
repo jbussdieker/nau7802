@@ -13,6 +13,14 @@ class REG_PWR_CTRL(ByteRegister):
     adc_curr: int = 0
     pga_curr: int = 0
 
+    def __post_init__(self) -> None:
+        if not 0 <= self.master_bias_curr <= 7:
+            raise ValueError("master_bias_curr out of range")
+        if not 0 <= self.adc_curr <= 3:
+            raise ValueError("adc_curr out of range")
+        if not 0 <= self.pga_curr <= 3:
+            raise ValueError("pga_curr out of range")
+
     def to_byte(self) -> int:
         value = 0
         value |= self.pga_cap_en << 7

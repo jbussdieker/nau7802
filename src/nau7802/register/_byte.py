@@ -19,4 +19,5 @@ class ByteRegister(Register):
 
     @classmethod
     def from_bytes(cls: Type[R], data: bytes) -> R:
+        cls._assert_data_width(data)
         return cls.from_byte(data[0])
