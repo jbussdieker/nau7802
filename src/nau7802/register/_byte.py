@@ -1,9 +1,11 @@
 from typing import Type
 from abc import abstractmethod
+from dataclasses import dataclass
 
 from ._base import Register, R
 
 
+@dataclass
 class ByteRegister(Register):
     WIDTH = 1
 

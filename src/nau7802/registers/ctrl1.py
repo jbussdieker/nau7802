@@ -10,8 +10,8 @@ class REG_CTRL1(ByteRegister):
 
     drdyp: bool = False
     drdy_sel: bool = False
-    vldo: int = 0  # 0..7
-    pga: int = 1  # 0..7
+    vldo: int = 0
+    pga: int = 1
 
     def __post_init__(self) -> None:
         if not 0 <= self.vldo <= 7:
