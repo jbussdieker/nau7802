@@ -31,7 +31,7 @@ class REG_PWR_CTRL(ByteRegister):
 
     @classmethod
     def from_byte(cls, byte: int) -> Self:
-        pga_curr = byte & 0b111
+        pga_curr = byte & 0b11
         adc_curr = (byte >> 2) & 0b11
         master_bias_curr = (byte >> 4) & 0b111
 
