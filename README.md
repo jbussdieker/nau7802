@@ -78,7 +78,7 @@ adc.set_channel(1)
 print(adc.ctrl2)
 # REG_CTRL2(chs=False, crs=3, ...)
 
-value = adc.adco
+value = adc.adco.value
 print(value)
 ```
 
@@ -190,7 +190,7 @@ adc.set_channel(1)
 ### Reading Data
 
 ```python
-value = adc.adco
+value = adc.adco.value
 ```
 
 ## Architecture Overview
