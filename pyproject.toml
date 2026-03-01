@@ -3,9 +3,8 @@ name = "nau7802"
 dynamic = [
     "version",
 ]
-dependencies = [
-]
-description = "NAU7802 Driver"
+dependencies = []
+description = "A typed, register-accurate Python driver for the NAU7802 24-bit ADC load-cell amplifier."
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [
@@ -17,7 +16,7 @@ maintainers = [
 classifiers = [
     "Topic :: Scientific/Engineering :: Instrument Drivers",
     "Topic :: System :: Hardware :: Hardware Drivers",
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 3 - Alpha",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
