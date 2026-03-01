@@ -38,7 +38,7 @@ Typed registers prevent invalid bit configurations and make register state inspe
 ## Installation
 
 ```bash
-pip install nau7802[i2c]
+pip install nau7802[cli]
 ```
 
 Or from source:
