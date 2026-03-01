@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/jbussdieker/nau7802/compare/v0.2.0...v0.3.0) (2026-03-01)
+
+
+### Features
+
+* **cli, device:** enhance calibration and register handling ([43c1a2b](https://github.com/jbussdieker/nau7802/commit/43c1a2b66746c367d019c7a57c5d4aadce01eec9))
+
 ## [0.2.0](https://github.com/jbussdieker/nau7802/compare/v0.1.0...v0.2.0) (2026-02-25)
 
 
