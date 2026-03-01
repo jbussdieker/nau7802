@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/jbussdieker/nau7802/compare/v0.3.0...v0.4.0) (2026-03-01)
+
+
+### Features
+
+* **cli:** add version option to CLI ([500d8c7](https://github.com/jbussdieker/nau7802/commit/500d8c7b46d99ddd62a38230756ddf864d34914c))
+
 ## [0.3.0](https://github.com/jbussdieker/nau7802/compare/v0.2.0...v0.3.0) (2026-03-01)
 
 
