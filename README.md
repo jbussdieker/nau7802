@@ -243,7 +243,7 @@ mypy src/
 
 ## Status
 
-**Development Status:** Pre-Alpha
+**Development Status:** Alpha
 
 The API may change as hardware behavior and ergonomics are refined.
 
