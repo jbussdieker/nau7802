@@ -56,7 +56,12 @@ def resume(ctx: CLIContext) -> None:
 @pass_context
 @click.argument("channel", type=int)
 def set_channel(ctx: CLIContext, channel: int) -> None:
-    ctx.device.set_channel(channel)
+    if channel == 1:
+        ctx.device.set_channel(1)
+    elif channel == 2:
+        ctx.device.set_channel(2)
+    else:
+        click.echo("Invalid channel")
 
 
 @main.command()

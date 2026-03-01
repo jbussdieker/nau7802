@@ -1,3 +1,5 @@
+from typing import Literal
+
 from ..protocol import BusProtocol
 from .. import registers
 from . import power, control, adc
@@ -29,7 +31,7 @@ class NAU7802:
     def set_crs(self, crs: int) -> None:
         control._set_crs(self.bus, self.addr, crs)
 
-    def set_channel(self, channel: int) -> None:
+    def set_channel(self, channel: Literal[1, 2]) -> None:
         if channel == 1:
             chs = False
         elif channel == 2:
