@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.3](https://github.com/jbussdieker/nau7802/compare/v0.5.2...v0.5.3) (2026-03-01)
+
+
+### Documentation
+
+* **pyproject:** update project metadata ([f80b38f](https://github.com/jbussdieker/nau7802/commit/f80b38f6f55e69ab3a92db5528243b12b1fe95ee))
+
 ## [0.5.2](https://github.com/jbussdieker/nau7802/compare/v0.5.1...v0.5.2) (2026-03-01)
 
 
