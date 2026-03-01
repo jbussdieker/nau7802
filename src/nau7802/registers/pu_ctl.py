@@ -19,14 +19,14 @@ class REG_PU_CTRL(ByteRegister):
 
     def to_byte(self) -> int:
         value = 0
-        value |= self.avdds << 7
-        value |= self.oscs << 6
-        value |= self.cr << 5
-        value |= self.cs << 4
-        value |= self.pur << 3
-        value |= self.pua << 2
-        value |= self.pud << 1
-        value |= self.rr << 0
+        value |= int(self.avdds) << 7
+        value |= int(self.oscs) << 6
+        value |= int(self.cr) << 5
+        value |= int(self.cs) << 4
+        value |= int(self.pur) << 3
+        value |= int(self.pua) << 2
+        value |= int(self.pud) << 1
+        value |= int(self.rr) << 0
         return value
 
     @classmethod

@@ -19,14 +19,14 @@ class REG_I2C_CONTROL(ByteRegister):
 
     def to_byte(self) -> int:
         value = 0
-        value |= self.crsd << 7
-        value |= self.frd << 6
-        value |= self.spe << 5
-        value |= self.wpd << 4
-        value |= self.si << 3
-        value |= self.bopga << 2
-        value |= self.ts << 1
-        value |= self.bgpcp << 0
+        value |= int(self.crsd) << 7
+        value |= int(self.frd) << 6
+        value |= int(self.spe) << 5
+        value |= int(self.wpd) << 4
+        value |= int(self.si) << 3
+        value |= int(self.bopga) << 2
+        value |= int(self.ts) << 1
+        value |= int(self.bgpcp) << 0
         return value
 
     @classmethod

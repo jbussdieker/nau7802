@@ -23,7 +23,7 @@ class REG_PWR_CTRL(ByteRegister):
 
     def to_byte(self) -> int:
         value = 0
-        value |= self.pga_cap_en << 7
+        value |= int(self.pga_cap_en) << 7
         value |= (self.master_bias_curr & 0b111) << 4
         value |= (self.adc_curr & 0b11) << 2
         value |= self.pga_curr & 0b11

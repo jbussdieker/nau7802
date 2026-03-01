@@ -19,14 +19,14 @@ class REG_ADC_CTRL3(ByteRegister):
 
     def to_byte(self) -> int:
         value = 0
-        value |= self.rd_otp_sel << 7
-        value |= self.ldomode << 6
-        value |= self.pga_buff << 5
-        value |= self.pga_bp << 4
-        value |= self.pgainv << 3
-        value |= self.res2 << 2
-        value |= self.res1 << 1
-        value |= self.pgachpdis << 0
+        value |= int(self.rd_otp_sel) << 7
+        value |= int(self.ldomode) << 6
+        value |= int(self.pga_buff) << 5
+        value |= int(self.pga_bp) << 4
+        value |= int(self.pgainv) << 3
+        value |= int(self.res2) << 2
+        value |= int(self.res1) << 1
+        value |= int(self.pgachpdis) << 0
         return value
 
     @classmethod

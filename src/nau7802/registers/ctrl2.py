@@ -22,10 +22,10 @@ class REG_CTRL2(ByteRegister):
 
     def to_byte(self) -> int:
         value = 0
-        value |= self.chs << 7
+        value |= int(self.chs) << 7
         value |= (self.crs & 0b111) << 4
-        value |= self.cal_err << 3
-        value |= self.cals << 2
+        value |= int(self.cal_err) << 3
+        value |= int(self.cals) << 2
         value |= self.calmod & 0b11
         return value
 

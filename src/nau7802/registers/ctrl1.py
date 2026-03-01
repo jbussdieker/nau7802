@@ -21,8 +21,8 @@ class REG_CTRL1(ByteRegister):
 
     def to_byte(self) -> int:
         value = 0
-        value |= self.drdyp << 7
-        value |= self.drdy_sel << 6
+        value |= int(self.drdyp) << 7
+        value |= int(self.drdy_sel) << 6
         value |= (self.vldo & 0b111) << 3
         value |= self.pga & 0b111
         return value
