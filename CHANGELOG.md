@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/jbussdieker/nau7802/compare/v0.5.0...v0.5.1) (2026-03-01)
+
+
+### Bug Fixes
+
+* **makefile:** add build and publish commands ([255204d](https://github.com/jbussdieker/nau7802/commit/255204ddd085c29d2798e883c6721378365f6cc4))
+
 ## [0.5.0](https://github.com/jbussdieker/nau7802/compare/v0.4.1...v0.5.0) (2026-03-01)
 
 
