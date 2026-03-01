@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/jbussdieker/nau7802/compare/v0.4.1...v0.5.0) (2026-03-01)
+
+
+### Features
+
+* **workflow:** add publish job to GitHub Actions ([31f856d](https://github.com/jbussdieker/nau7802/commit/31f856d17c27c19f4c8d471840e8c75befd706de))
+
 ## [0.4.1](https://github.com/jbussdieker/nau7802/compare/v0.4.0...v0.4.1) (2026-03-01)
 
 
