@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/jbussdieker/nau7802/compare/v0.4.0...v0.4.1) (2026-03-01)
+
+
+### Bug Fixes
+
+* **cli, device:** improve channel setting validation ([f288b79](https://github.com/jbussdieker/nau7802/commit/f288b79de014644e79d9fc16f3238490b3ca7599))
+
 ## [0.4.0](https://github.com/jbussdieker/nau7802/compare/v0.3.0...v0.4.0) (2026-03-01)
 
 
