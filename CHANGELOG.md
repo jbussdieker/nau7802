@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.2](https://github.com/jbussdieker/nau7802/compare/v0.5.1...v0.5.2) (2026-03-01)
+
+
+### Bug Fixes
+
+* **registers:** correct bitmask for pga_curr in REG_PWR_CTRL ([914859f](https://github.com/jbussdieker/nau7802/commit/914859f40d387de6fa9945840a078f888a347372))
+
+
+### Documentation
+
+* **readme:** update code examples for adc value access ([e04ec9a](https://github.com/jbussdieker/nau7802/commit/e04ec9ab6d8ff109068b03b23d3261e12173ee6d))
+* **readme:** update installation instructions for CLI ([b2e6606](https://github.com/jbussdieker/nau7802/commit/b2e6606f0f6ea36e8c9ca7b070a8a8efc820e1fd))
+
 ## [0.5.1](https://github.com/jbussdieker/nau7802/compare/v0.5.0...v0.5.1) (2026-03-01)
 
 
