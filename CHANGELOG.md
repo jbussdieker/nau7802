@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.4](https://github.com/jbussdieker/nau7802/compare/v0.5.3...v0.5.4) (2026-03-01)
+
+
+### Documentation
+
+* **readme:** update development status to Alpha ([5b52970](https://github.com/jbussdieker/nau7802/commit/5b5297092907c0481258c78f2f26872b7d35adb3))
+
 ## [0.5.3](https://github.com/jbussdieker/nau7802/compare/v0.5.2...v0.5.3) (2026-03-01)
 
 
