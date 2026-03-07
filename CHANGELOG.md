@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/jbussdieker/nau7802/compare/v0.5.4...v0.6.0) (2026-03-07)
+
+
+### Features
+
+* **device:** integrate `typed-registers` and remove custom protocol ([e465302](https://github.com/jbussdieker/nau7802/commit/e465302ddf385ea5626c790535a7110795e9c46b))
+
 ## [0.5.4](https://github.com/jbussdieker/nau7802/compare/v0.5.3...v0.5.4) (2026-03-01)
 
 
