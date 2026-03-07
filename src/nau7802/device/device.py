@@ -1,12 +1,13 @@
 from typing import Literal
 
-from ..protocol import BusProtocol
+from typed_registers import RegisterBus
+
 from .. import registers
 from . import power, control, adc
 
 
 class NAU7802:
-    def __init__(self, bus: BusProtocol, addr: int = 0x2A) -> None:
+    def __init__(self, bus: RegisterBus, addr: int = 0x2A) -> None:
         self.bus = bus
         self.addr: int = addr
 

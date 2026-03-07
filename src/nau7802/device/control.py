@@ -1,44 +1,41 @@
+from dataclasses import replace
+
+from typed_registers import RegisterBus
+
 from ..registers import REG_CTRL1, REG_CTRL2
-from ..protocol import BusProtocol
 
 
-def _set_pga(bus: BusProtocol, addr: int, pga: int) -> None:
+def _set_pga(bus: RegisterBus, addr: int, pga: int) -> None:
     ctrl1 = REG_CTRL1.read(bus, addr)
     if ctrl1.pga != pga:
-        ctrl1.pga = pga
-        ctrl1.write(bus, addr)
+        replace(ctrl1, pga=pga).write(bus, addr)
 
 
-def _set_vldo(bus: BusProtocol, addr: int, vldo: int) -> None:
+def _set_vldo(bus: RegisterBus, addr: int, vldo: int) -> None:
     ctrl1 = REG_CTRL1.read(bus, addr)
     if ctrl1.vldo != vldo:
-        ctrl1.vldo = vldo
-        ctrl1.write(bus, addr)
+        replace(ctrl1, vldo=vldo).write(bus, addr)
 
 
-def _set_crs(bus: BusProtocol, addr: int, crs: int) -> None:
+def _set_crs(bus: RegisterBus, addr: int, crs: int) -> None:
     ctrl2 = REG_CTRL2.read(bus, addr)
     if ctrl2.crs != crs:
-        ctrl2.crs = crs
-        ctrl2.write(bus, addr)
+        replace(ctrl2, crs=crs).write(bus, addr)
 
 
-def _set_chs(bus: BusProtocol, addr: int, channel: bool) -> None:
+def _set_chs(bus: RegisterBus, addr: int, chs: bool) -> None:
     ctrl2 = REG_CTRL2.read(bus, addr)
-    if ctrl2.chs != channel:
-        ctrl2.chs = channel
-        ctrl2.write(bus, addr)
+    if ctrl2.chs != chs:
+        replace(ctrl2, chs=chs).write(bus, addr)
 
 
-def _set_cals(bus: BusProtocol, addr: int, cals: bool) -> None:
+def _set_cals(bus: RegisterBus, addr: int, cals: bool) -> None:
     ctrl2 = REG_CTRL2.read(bus, addr)
     if ctrl2.cals != cals:
-        ctrl2.cals = cals
-        ctrl2.write(bus, addr)
+        replace(ctrl2, cals=cals).write(bus, addr)
 
 
-def _set_calmod(bus: BusProtocol, addr: int, calmod: int) -> None:
+def _set_calmod(bus: RegisterBus, addr: int, calmod: int) -> None:
     ctrl2 = REG_CTRL2.read(bus, addr)
     if ctrl2.calmod != calmod:
-        ctrl2.calmod = calmod
-        ctrl2.write(bus, addr)
+        replace(ctrl2, calmod=calmod).write(bus, addr)

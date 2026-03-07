@@ -1,9 +1,11 @@
+from dataclasses import replace
+
+from typed_registers import RegisterBus
+
 from ..registers import REG_ADC_CTRL1
-from ..protocol import BusProtocol
 
 
-def _set_defaults(bus: BusProtocol, addr: int) -> None:
+def _set_defaults(bus: RegisterBus, addr: int) -> None:
     adc = REG_ADC_CTRL1.read(bus, addr)
     if adc.reg_chps != 3:
-        adc.reg_chps = 3
-        adc.write(bus, addr)
+        replace(adc, reg_chps=3).write(bus, addr)

@@ -1,10 +1,10 @@
 from typing import Self
 from dataclasses import dataclass
 
-from ..register._byte import ByteRegister
+from typed_registers import ByteRegister
 
 
-@dataclass
+@dataclass(slots=True, frozen=True)
 class REG_CTRL2(ByteRegister):
     ADDRESS = 0x02
 

@@ -8,6 +8,8 @@ except ImportError:
 
 import smbus2
 
+from typed_registers import SMBusRegisterBus
+
 from . import NAU7802
 
 
@@ -26,7 +28,7 @@ pass_context = click.make_pass_decorator(CLIContext)
 def main(ctx: click.Context, bus: int) -> None:
     """NAU7802 CLI tool."""
     ctx.obj = CLIContext(
-        device=NAU7802(smbus2.SMBus(bus)),
+        device=NAU7802(SMBusRegisterBus(smbus2.SMBus(bus))),
     )
 
 

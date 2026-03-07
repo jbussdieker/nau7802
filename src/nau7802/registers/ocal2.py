@@ -1,4 +1,4 @@
-from ..register._int24 import Int24Register
+from typed_registers import Int24Register
 
 
 class REG_OCAL2(Int24Register):
