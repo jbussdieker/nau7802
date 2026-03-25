@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/jbussdieker/nau7802/compare/v0.6.0...v0.7.0) (2026-03-25)
+
+
+### Features
+
+* **dependencies:** update `typed-registers` to version 0.2.0 ([9d38ac7](https://github.com/jbussdieker/nau7802/commit/9d38ac7ae73912895409951c55f590ba973151e2))
+
 ## [0.6.0](https://github.com/jbussdieker/nau7802/compare/v0.5.4...v0.6.0) (2026-03-07)
 
 
